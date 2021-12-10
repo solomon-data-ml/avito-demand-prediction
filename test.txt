@@ -1,0 +1,54 @@
+<script>
+ $('#submit').click(function () {
+       console.log("test")
+       var form_data = new FormData($('#gstoreform')[0]);
+       console.log("test")
+       // Show loading animation
+
+
+       // Make prediction by calling api /predict
+       $.ajax({
+           type: 'POST',
+           url: '/predict',
+           data: form_data,
+           contentType: false,
+           cache: false,
+           processData: false,
+           async: true,
+           success: function (data) {
+               // Get and display the result
+               console.log('Success!');
+               $('#output').text("The Predicted Revenue is : "+ String(exist_response) + "$");
+
+           },
+       });
+   });
+ </script>
+
+
+ out = model_predict('',lbl_encoder_container,model,
+
+   #out = model_predict('',lbl_encoder_container,model,totalshits=  request.form.get('totalshits'),
+   totalspageviews= request.form.get('totalspageviews'),
+   #                          visitNumber=  request.form.get('visitNumber') ,
+   visitStartTime=request.form.get('visitStartTime'),
+   totalsbounces=request.form.get('totalsbounces'),
+   totalsnewVisits = request.form.get('totalsnewVisits'),
+   #                          channelGrouping=str(request.form.get('channelGrouping')),
+   devicebrowser=str(request.form.get('devicebrowser')),
+   deviceisMobile=str(request.form.get('deviceisMobile')),
+   #                          devicedeviceCategory=str(request.form.get('devicedeviceCategory')),
+   geoNetworkcontinent=str(request.form.get('geoNetworkcontinent')),
+   geoNetworksubContinent=str(request.form.get('geoNetworksubContinent')),
+   #                          geoNetworkcountry=str(request.form.get('geoNetworkcountry')),
+   geoNetworkregion=str(request.form.get('geoNetworkregion')),
+   geoNetworkmetro=str(request.form.get('geoNetworkmetro')),
+   #                          geoNetworkcity=str(request.form.get('geoNetworkcity')),
+    trafficSourcecampaign=str(request.form.get('trafficSourcecampaign')),
+    trafficSourcesource=str(request.form.get('trafficSourcesource')),
+    trafficSourcemedium=str(request.form.get('trafficSourcemedium')),
+   #                          trafficSourceisTrueDirect=str(request.form.get('trafficSourceisTrueDirect')),
+   date=str(request.form.get('date')))
+
+
+   

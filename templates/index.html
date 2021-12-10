@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Gstore Revenue Prediction</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<style type="text/css">
+*{margin:0;padding:0;box-sizing:border-box}body,html{height:100%;font-family:Poppins-Regular,sans-serif}a{font-family:Poppins-Regular;font-size:14px;line-height:1.7;color:#666;margin:0;transition:all .4s;-webkit-transition:all .4s;-o-transition:all .4s;-moz-transition:all .4s}a:focus{outline:0!important}a:hover{text-decoration:none}h1,h2,h3,h4,h5,h6{margin:0}input{outline:0;border:none}input:focus::-webkit-input-placeholder{color:transparent}input:focus:-moz-placeholder{color:transparent}input:focus::-moz-placeholder{color:transparent}input:focus:-ms-input-placeholder{color:transparent}input::-webkit-input-placeholder{color:#adadad}input:-moz-placeholder{color:#adadad}input::-moz-placeholder{color:#adadad}input:-ms-input-placeholder{color:#adadad}button{outline:0!important;border:none;background:0 0}button:hover{cursor:pointer}.container{max-width:1200px}.container-contact100{width:100%;min-height:100vh;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;padding:15px;background:#a64bf4;background:-webkit-linear-gradient(45deg,#00dbde,#fc00ff);background:-o-linear-gradient(45deg,#00dbde,#fc00ff);background:-moz-linear-gradient(45deg,#00dbde,#fc00ff);background:linear-gradient(45deg,#00dbde,#fc00ff)}.wrap-contact100{width:500px;background:#fff;border-radius:10px;overflow:hidden;padding:42px 55px 45px 55px}.contact100-form{width:100%}.contact100-form-title{display:block;font-family:Poppins-Bold;font-size:39px;color:#333;line-height:1.2;text-align:center;padding-bottom:10px}.wrap-input100{width:100%;position:relative;border-bottom:2px solid #d9d9d9;padding-bottom:10px;margin-bottom:15px}.input100{display:block;width:100%;background:0 0;font-family:Poppins-Medium;font-size:18px;color:#333;line-height:1.2;padding:0 5px}.focus-input100{position:absolute;display:block;width:100%;height:100%;top:0;left:0;pointer-events:none}.focus-input100::before{content:"";display:block;position:absolute;bottom:-2px;left:0;width:0;height:2px;-webkit-transition:all .4s;-o-transition:all .4s;-moz-transition:all .4s;transition:all .4s;background:#7f7f7f}input.input100{height:40px}.input100:focus+.focus-input100::before{width:100%}.has-val.input100+.focus-input100::before{width:100%}.container-contact100-form-btn{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;flex-wrap:wrap;justify-content:center;padding-top:13px}.wrap-contact100-form-btn{width:100%;display:block;position:relative;z-index:1;border-radius:25px;overflow:hidden;margin:0 auto}.contact100-form-bgbtn{position:absolute;z-index:-1;width:300%;height:100%;background:#a64bf4;background:-webkit-linear-gradient(left,#00dbde,#fc00ff,#00dbde,#fc00ff);background:-o-linear-gradient(left,#00dbde,#fc00ff,#00dbde,#fc00ff);background:-moz-linear-gradient(left,#00dbde,#fc00ff,#00dbde,#fc00ff);background:linear-gradient(left,#00dbde,#fc00ff,#00dbde,#fc00ff);top:0;left:-100%;-webkit-transition:all .4s;-o-transition:all .4s;-moz-transition:all .4s;transition:all .4s}.contact100-form-btn{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;justify-content:center;align-items:center;padding:0 20px;width:100%;height:50px;font-family:Poppins-Medium;font-size:16px;color:#fff;line-height:1.2}.wrap-contact100-form-btn:hover .contact100-form-bgbtn{left:0}.contact100-form-btn i{-webkit-transition:all .4s;-o-transition:all .4s;-moz-transition:all .4s;transition:all .4s}.contact100-form-btn:hover i{-webkit-transform:translateX(10px);-moz-transform:translateX(10px);-ms-transform:translateX(10px);-o-transform:translateX(10px);transform:translateX(10px)}@media (max-width:576px){.wrap-contact100{padding:72px 15px 65px 15px}}.wrap-contact100{width:800px;background:#fff;border-radius:10px;overflow:hidden;padding:42px 55px 45px 55px}.contact100-form-title{font-size:26px}
+</style>
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+		<form class="contact100-form validate-form" id="gstoreform">
+
+				<span class="contact100-form-title" style="font-size:32px">Google Store Revenue Prediction</span>
+				<span class="contact100-form-title" id="output" style="color: #ff0000;" >&nbsp;</span>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Date</span>
+					<input class="input100" type="text" id="date" value="01/01/2021" name="date" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Total Hits</span>
+					<input class="input100" type="text" id="totalshits" value="1" name="totalshits" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Total Page Views</span>
+					<input class="input100" type="text" id="totalspageviews" value="1" name="totalspageviews" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Visit Number</span>
+					<input class="input100" type="text" id="visitNumber" value="1"  name="visitNumber" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Visit Start Time</span>
+					<input class="input100" type="text" id="visitStartTime" value="1535084481"  name="visitStartTime" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Total Bounces</span>
+					<input class="input100" type="text" id="totalsbounces"  value="1"   name="totalsbounces" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Total New Visits</span>
+					<input class="input100" type="text" id="totalsnewVisits" value="1"  name="totalsnewVisits" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Channel Grouping</span>
+					<select  class="input100" id="channelGrouping" name="channelGrouping" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select Channel Grouping</option>
+							<option value="Organic Search">Organic Search</option>
+							<option value="Social">Social</option>
+							<option value="Direct">Direct</option>
+							<option value="Referral">Referral</option>
+							<option value="Display">Display</option>
+							<option value="Paid Search">Paid Search</option>
+							<option value="Affiliates">Affiliates</option>
+							<option value="(Other)">Other</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Browser</span>
+					<select  class="input100" id="devicebrowser" name="devicebrowser" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select Browser</option>
+							<option value="Chrome">Chrome</option>
+							<option value="Safari">Safari</option>
+							<option value="Firefox">Firefox</option>
+							<option value="Internet Explorer">Internet Explorer</option>
+							<option value="Android Webview">Android Webview</option>
+							<option value="Edge">Edge</option>
+							<option value="Samsung Internet">Samsung Internet</option>
+							<option value="Opera Mini">Opera Mini</option>
+							<option value="Safari (in-app)">Safari (in-app)</option>
+							<option value="Opera">Opera</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">IsMobile?</span>
+					<select  class="input100" id="deviceisMobile" name="deviceisMobile" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select isMobile</option>
+							<option value="True">True</option>
+							<option value="False">False</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Device Category</span>
+					<select  class="input100" id="devicedeviceCategory" name="devicedeviceCategory" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select Device Category</option>
+							<option value="desktop">Desktop</option>
+							<option value="mobile">Mobile</option>
+							<option value="tablet">Tablet</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Continent</span>
+					<select  class="input100" id="geoNetworkcontinent" name="geoNetworkcontinent" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select Continent</option>
+							<option value="Americas">Americas</option>
+							<option value="Asia">Asia</option>
+							<option value="Europe">Europe</option>
+							<option value="Africa">Africa</option>
+							<option value="Oceania">Oceania</option>
+							<option value="(not set)">Others</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Network Subcontinent</span>
+					<select  class="input100" id="geoNetworksubContinent" name="geoNetworksubContinent" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select Subcontinent</option>
+							<option value="Northern America">Northern America</option>
+							<option value="Southeast Asia">Southeast Asia</option>
+							<option value="Southern Asia">Southern Asia</option>
+							<option value="Western Europe">Western Europe</option>
+							<option value="Northern Europe">Northern Europe</option>
+							<option value="Eastern Asia">Eastern Asia</option>
+							<option value="South America">South America</option>
+							<option value="Eastern Europe">Eastern Europe</option>
+							<option value="Southern Europe">Southern Europe</option>
+							<option value="Western Asia">Western Asia</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Country</span>
+					<select  class="input100" id="geoNetworkcountry" name="geoNetworkcountry" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select Country</option>
+							<option value="United States">United States</option>
+							<option value="India">India</option>
+							<option value="United Kingdom">United Kingdom</option>
+							<option value="Canada">Canada</option>
+							<option value="Germany">Germany</option>
+							<option value="Japan">Japan</option>
+							<option value="Brazil">Brazil</option>
+							<option value="Vietnam">Vietnam</option>
+							<option value="France">France</option>
+							<option value="Thailand">Thailand</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Region</span>
+					<select  class="input100" id="geoNetworkregion" name="geoNetworkregion" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select Region</option>
+							<option value="California">California</option>
+							<option value="New York">New York</option>
+							<option value="California">California</option>
+							<option value="England">England</option>
+							<option value="Texas">Texas</option>
+							<option value="Illinois">Illinois</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Bangkok">Bangkok</option>
+							<option value="not available in demo dataset">Others</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Metro</span>
+					<select  class="input100" id="geoNetworkmetro" name="geoNetworkmetro" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select Metro</option>
+							<option value="San Francisco-Oakland-San Jose CA">San Francisco-Oakland-San Jose CA</option>
+							<option value="New York NY">New York NY</option>
+							<option value="London">London</option>
+							<option value="Los Angeles CA">Los Angeles CA</option>
+							<option value="Chicago IL">Chicago IL</option>
+							<option value="Seattle-Tacoma WA">Seattle-Tacoma WA</option>
+							<option value="Austin TX">Austin TX</option>
+							<option value="Washington DC (Hagerstown MD)">Washington DC (Hagerstown MD)</option>
+							<option value="not available in demo dataset">Others</option>
+							<option value="(not set)">Not Applicable</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">City</span>
+					<select  class="input100" id="geoNetworkcity" name="geoNetworkcity" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select City</option>
+							<option value="Mountain View">Mountain View</option>
+							<option value="New York">New York</option>
+							<option value="San Francisco">San Francisco</option>
+							<option value="Sunnyvale">Sunnyvale</option>
+							<option value="London">London</option>
+							<option value="San Jose">San Jose</option>
+							<option value="Los Angeles">Los Angeles</option>
+							<option value="Chicago">Chicago</option>
+							<option value="not available in demo dataset">Others</option>
+							<option value="(not set)">Not Applicable</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Campaign</span>
+					<select  class="input100" id="trafficSourcecampaign" name="trafficSourcecampaign" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select Campaign</option>
+							<option value="Data Share Promo">Data Share Promo</option>
+							<option value="1000557 | GA | US | en | Hybrid | GDN Text+Banner | AS">GDN Text Banner</option>
+							<option value="1000557 | GA | US | en | Hybrid | GDN Remarketing">GDN Marketing</option>
+							<option value="AW - Dynamic Search Ads Whole Site">AW - Dynamic Search Ads Whole Site</option>
+							<option value="AW - Accessories">AW - Accessories</option>
+							<option value="Smart Display Campaign">Smart Display Campaign</option>
+							<option value="(not set)">Others</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Source</span>
+					<select  class="input100" id="trafficSourcesource" name="trafficSourcesource" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select Source</option>
+							<option value="google">Google</option>
+							<option value="(direct">Direct</option>
+							<option value="youtube.com">Youtube</option>
+							<option value="analytics.google.com">Google Analytics</option>
+							<option value="Partners">Partners</option>
+							<option value="sites.google.com">sites.google.com</option>
+							<option value="google.com">google.com</option>
+							<option value="m.facebook.com">Facebook</option>
+							<option value="dfa">DFA</option>
+							<option value="baidu">Baidu</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">Medium</span>
+					<select  class="input100" id="trafficSourcemedium" name="trafficSourcemedium" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select Medium</option>
+							<option value="organic">Organic</option>
+							<option value="referral">Referral</option>
+							<option value="cpc">CPC</option>
+							<option value="affiliate">Affiliate</option>
+							<option value="cpm">CPM</option>
+							<option value="(none)">Others</option>
+							<option value="(not set)">Not Applicable</option>
+
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 " >
+					<span class="label-input100">IsTrueDirect</span>
+					<select  class="input100" id="trafficSourceisTrueDirect" name="trafficSourceisTrueDirect" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;" >
+							<option value="">Select IsTrueDirect</option>
+							<option value="True">True</option>
+							<option value="False">False</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn" id='submit' type="submit" value="Submit">Submit</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$('#submit').click(function(event){
+
+		  event.preventDefault();
+		  var data = $('#gstoreform').serialize();
+
+		  var exist_response = $.ajax({type:"GET",url:"/predict",data:data,async: false}).responseText;
+
+		  $('#output').text("The Predicted Revenue for this customer is  : "+ exist_response + "$");
+			$('html, body').animate({scrollTop: '0px'}, 300);
+		});
+	</script>
+
+</body>
+</html>
